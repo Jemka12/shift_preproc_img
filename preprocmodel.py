@@ -116,7 +116,7 @@ class FlipImage():
       plt.figure(figsize=(12,10))
       sns.countplot(predict)
       print('Закончил')
-      return list(zip(image_file, predict))
+      return image_file, predict
 
 class DublicateData(Dataset):
   def __init__(self, files):
@@ -250,7 +250,7 @@ class TarifClass():
     plt.figure(figsize=(12,10))
     sns.countplot(predict)
     print('Закончил')
-    return list(zip(image_file, predict))
+    return image_file, predict
 
 def load_model():
   os.system('gdown https://drive.google.com/uc?id=18lhZKdp1wrHcJmeidTqdsv_zSF1aQ54R&export=download')
