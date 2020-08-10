@@ -255,4 +255,6 @@ class TarifClass():
 def load_model():
   os.system('gdown https://drive.google.com/uc?id=18lhZKdp1wrHcJmeidTqdsv_zSF1aQ54R&export=download')
   os.system('gdown https://drive.google.com/uc?id=1OQ9lYBwkXQUmT9ipw_ca1CaFuH1sBgg5&export=download')
+  os.system('gdown https://drive.google.com/uc?id=1--zQ9iXWpJKZV12aV1-GktPaeBq9aV8i&export=download')
+  
   print('Модели скачаны')
