@@ -83,7 +83,9 @@ def image_new_low(DIR):
     image_file = sorted(list(old_dir.rglob('*.*')))
     save_image(image_file)
 
-def zip_to_backet(DIR, name):
+def zip_to_backet(DIR, name, tarif):
+    models = ['o_tarif', 'm_tarif']
+    assert sum([True  for  i in models if tarif == i])
   try:
     os.mkdir('zip')
   except FileExistsError:
@@ -92,5 +94,5 @@ def zip_to_backet(DIR, name):
     len_dir = len(os.listdir(DIR+'/'+path))
     os.system(f'zip -9 "zip/{path}&_{len_dir}_{name}.zip" "{DIR}/{path}/"* ')
     backet = re.split('&', path)[0]
-    os.system(f'gsutil -m cp -r "zip/{path}&_{len_dir}_{name}.zip" "gs://toloka-main/models_by_class/o_tarif/{backet}" ')
+    os.system(f'gsutil -m cp -r "zip/{path}&_{len_dir}_{name}.zip" "gs://toloka-main/models_by_class/tarif/{backet}" ')
     print(f'Отправлен zip/{path}&_{len_dir}_{name}.zip в gs://toloka-main/models_by_class/o_tarif/{backet}')
