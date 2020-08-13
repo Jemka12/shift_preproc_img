@@ -94,5 +94,5 @@ def zip_to_backet(DIR, name, tarif):
     len_dir = len(os.listdir(DIR+'/'+path))
     os.system(f'zip -9 "zip/{path}&_{len_dir}_{name}.zip" "{DIR}/{path}/"* ')
     backet = re.split('&', path)[0]
-    os.system(f'gsutil -m cp -r "zip/{path}&_{len_dir}_{name}.zip" "gs://toloka-main/models_by_class/tarif/{backet}" ')
-    print(f'Отправлен zip/{path}&_{len_dir}_{name}.zip в gs://toloka-main/models_by_class/o_tarif/{backet}')
+    os.system(f'gsutil -m cp -r "zip/{path}&_{len_dir}_{name}.zip" "gs://toloka-main/models_by_class/{tarif}/{backet}" ')
+    print(f'Отправлен zip/{path}&_{len_dir}_{name}.zip в gs://toloka-main/models_by_class/{tarif}/{backet}')
