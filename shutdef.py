@@ -84,8 +84,8 @@ def image_new_low(DIR):
     save_image(image_file)
 
 def zip_to_backet(DIR, name, tarif):
-    models = ['o_tarif', 'm_tarif']
-    assert sum([True  for  i in models if tarif == i])
+  models = ['o_tarif', 'm_tarif']
+  assert sum([True  for  i in models if tarif == i])
   try:
     os.mkdir('zip')
   except FileExistsError:
